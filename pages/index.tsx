@@ -3,6 +3,12 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
+/*
+color pallete
+-- bg-
+-- text-main #faf3ea
+*/
+
 const tabs = [
   {
     key: 'all',
@@ -32,7 +38,7 @@ export default function Home() {
         <div>logo</div>
         <Link
           href="#"
-          className="rounded-3xl bg-[#faf3ea] text-stone-700 px-3 py-2 hover:bg-opacity-90"
+          className="rounded-3xl bg-[#faf3ea] text-stone-700 px-3 py-2 hover:bg-opacity-90 font-semibold"
         >
           Get in touch
         </Link>
@@ -64,7 +70,7 @@ export default function Home() {
       </main>
 
       <footer className="h-[60px] flex justify-center items-center">
-        <p>rritammitra59@gmail.com</p>
+        <p>© 2024 - rritammitra59@gmail.com</p>
       </footer>
     </div>
   );
