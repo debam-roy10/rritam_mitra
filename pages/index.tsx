@@ -37,8 +37,8 @@ export default function Home() {
         {/* <div>hm</div> */}
         <Link href="#">
           <Image
-            src="/logo.png"
-            width={200}
+            src="/logo2.png"
+            width={190}
             height={50}
             alt="Rritam Mitra"
             className="transition-opacity opacity-0 duration-[2s]"
