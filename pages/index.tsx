@@ -5,28 +5,28 @@ import Link from "next/link";
 
 /*
 color pallete
--- bg-
+-- bg-color #1c1917
 -- text-main #faf3ea
 */
 
 const tabs = [
   {
-    key: 'all',
-    display: 'All'
+    key: "all",
+    display: "All",
   },
   {
-    key: 'landscape',
-    display: 'Landscape'
+    key: "landscape",
+    display: "Landscape",
   },
   {
-    key: 'contemporary',
-    display: 'Contemporary'
-  }
-]
+    key: "contemporary",
+    display: "Contemporary",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col h-full bg-[url('/p-bg-edit.jpg')] bg-right bg-cover">
+    <div className="flex flex-col h-full bg-[url('/p-bg.jpg')] bg-right-bottom bg-cover">
       <Head>
         <title>Rritam Mitra</title>
         <meta name="description" content="Photography Portfolio" />
@@ -35,7 +35,16 @@ export default function Home() {
 
       <header className="flex justify-between items-center h-[90px] px-6">
         {/* <div>hm</div> */}
-        <div>logo</div>
+        <Link href="#">
+          <Image
+            src="/logo.png"
+            width={200}
+            height={50}
+            alt="Rritam Mitra"
+            className="transition-opacity opacity-0 duration-[2s]"
+            onLoadingComplete={(image)=>image.classList.remove("opacity-0")}
+          />
+        </Link>
         <Link
           href="#"
           className="rounded-3xl bg-[#faf3ea] text-stone-700 px-3 py-2 hover:bg-opacity-90 font-semibold"
@@ -48,16 +57,16 @@ export default function Home() {
         <div className="flex flex-col items-center h-full">
           <Tab.Group>
             <Tab.List className="flex items-center gap-12">
-              {tabs.map(tab => (
+              {tabs.map((tab) => (
                 <Tab key={tab.key} className="p-2">
-                {({ selected }) => (
-                  <span
-                    className={selected ? "text-[#faf3ea]" : "text-stone-400"}
-                  >
-                    {tab.display}
-                  </span>
-                )}
-              </Tab>
+                  {({ selected }) => (
+                    <span
+                      className={selected ? "text-[#faf3ea]" : "text-stone-400"}
+                    >
+                      {tab.display}
+                    </span>
+                  )}
+                </Tab>
               ))}
             </Tab.List>
             <Tab.Panels className="h-full bg-stone-900 bg-opacity-80 max-w-[900px] w-full p-2 sm:p-4 my-6">
