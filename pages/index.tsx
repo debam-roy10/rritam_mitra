@@ -2,6 +2,8 @@ import { Tab } from "@headlessui/react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Masonry from 'react-masonry-css';
+import classNames from "classnames";
 
 /*
 color pallete
@@ -26,14 +28,14 @@ const tabs = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col h-full bg-[url('/p-bg.jpg')] bg-right-bottom bg-cover">
+    <div className="h-full bg-[url('/p-bg.jpg')] bg-right-bottom bg-cover overflow-auto">
       <Head>
         <title>Rritam Mitra</title>
         <meta name="description" content="Photography Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="flex justify-between items-center h-[90px] px-6">
+      <header className="fixed top-0 w-full z-10 flex justify-between items-center h-[90px] px-10">
         {/* <div>hm</div> */}
         <Link href="#">
           <Image
@@ -53,7 +55,7 @@ export default function Home() {
         </Link>
       </header>
 
-      <main className="grow">
+      <main className="pt-[100px]">
         <div className="flex flex-col items-center h-full">
           <Tab.Group>
             <Tab.List className="flex items-center gap-12">
@@ -61,7 +63,7 @@ export default function Home() {
                 <Tab key={tab.key} className="p-2">
                   {({ selected }) => (
                     <span
-                      className={selected ? "text-[#faf3ea]" : "text-stone-400"}
+                      className={classNames("uppercase text-sm", selected ? "text-[#faf3ea]" : "text-stone-400")}
                     >
                       {tab.display}
                     </span>
@@ -69,8 +71,17 @@ export default function Home() {
                 </Tab>
               ))}
             </Tab.List>
-            <Tab.Panels className="h-full bg-stone-900 bg-opacity-80 max-w-[900px] w-full p-2 sm:p-4 my-6">
-              <Tab.Panel className="">All Photos</Tab.Panel>
+            <Tab.Panels className="h-full max-w-[900px] w-full p-2 sm:p-4 my-6">
+              <Tab.Panel>
+                <Masonry breakpointCols={2} className="flex gap-2" columnClassName="">
+                  <img src="/p1.jpg" alt="p1" className="mb-2"/>
+                  <img src="/p2.jpg" alt="p2" className="mb-2"/>
+                  <img src="/p3.jpg" alt="p3" className="mb-2"/>
+                  <img src="/p4.jpg" alt="p4" className="mb-2"/>
+                  <img src="/p5.jpg" alt="p5" className="mb-2"/>
+                  <img src="/p6.jpg" alt="p6" className="mb-2"/>
+                </Masonry>
+              </Tab.Panel>
               <Tab.Panel>landscape</Tab.Panel>
               <Tab.Panel>contemporary</Tab.Panel>
             </Tab.Panels>
@@ -78,7 +89,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="h-[60px] flex justify-center items-center">
+      <footer className="h-[90px] flex justify-center items-center">
         <p>© 2024 - rritammitra59@gmail.com</p>
       </footer>
     </div>
