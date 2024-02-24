@@ -1,16 +1,16 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { Fira_Sans } from "next/font/google";
+import { Roboto_Condensed } from "next/font/google";
 
-const firaSans = Fira_Sans({
+const customFont = Roboto_Condensed ({
   subsets: ["latin"],
-  variable: "--font-fira",
+  variable: "--font-custom",
   weight: '400',
 });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className={`${firaSans.variable} font-sans`}>
+    <div className={`${customFont.variable} font-sans`}>
       <Component {...pageProps} />
     </div>
   );

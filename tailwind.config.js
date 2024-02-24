@@ -9,8 +9,15 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-fira)', ...fontFamily.sans],
+        sans: ['var(--font-custom)', ...fontFamily.sans],
       },
+    },
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      'dark' : '#1c1917',
+      'semilight' : '#a8a29e',
+      'light' : '#faf3ea',
     },
   },
   plugins: [],
