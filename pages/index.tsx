@@ -63,7 +63,7 @@ export default function Home() {
                 <Tab key={tab.key} className="p-2">
                   {({ selected }) => (
                     <span
-                      className={classNames("uppercase text-sm", selected ? "text-[#faf3ea]" : "text-stone-400")}
+                      className={classNames("uppercase text-md", selected ? "text-[#faf3ea]" : "text-stone-400")}
                     >
                       {tab.display}
                     </span>
