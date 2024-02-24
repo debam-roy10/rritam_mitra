@@ -108,7 +108,7 @@ export default function Home() {
             <Tab.Panels className="h-full max-w-[900px] w-full p-2 sm:p-4 my-6">
               <Tab.Panel>
                 <Masonry
-                  breakpointCols={2}
+                  breakpointCols={1}
                   className="flex gap-2"
                   columnClassName=""
                 >
