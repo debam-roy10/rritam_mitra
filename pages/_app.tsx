@@ -10,7 +10,7 @@ const customFont = Roboto_Condensed ({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className={`${customFont.variable} font-sans`}>
+    <div className={`${customFont.variable} font-sans h-full`}>
       <Component {...pageProps} />
     </div>
   );
