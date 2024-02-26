@@ -106,9 +106,9 @@ export default function Home() {
               ))}
             </Tab.List>
             <Tab.Panels className="h-full max-w-[900px] w-full p-2 sm:p-4 my-6">
-              <Tab.Panel>
+              <Tab.Panel className="overflow-auto">
                 <Masonry
-                  breakpointCols={1}
+                  breakpointCols={{default: 2, 800: 1}}
                   className="flex gap-2"
                   columnClassName=""
                 >
