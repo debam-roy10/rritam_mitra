@@ -56,10 +56,10 @@ export function MobileNav() {
             <Link href="#portfolio">Portfolio</Link>
           </li>
           <li onClick={() => setOpenMenu(false)}>
-            <Link href="#">About</Link>
+            <Link href="#about">About</Link>
           </li>
           <li onClick={() => setOpenMenu(false)}>
-            <Link href="#">Contact</Link>
+            <Link href="#contact">Contact</Link>
           </li>
 
           <ul className="pt-10 text-2xl flex gap-x-6">

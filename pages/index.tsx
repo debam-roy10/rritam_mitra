@@ -2,6 +2,8 @@ import Head from "next/head";
 
 import { Gallery } from "../components/Gallery";
 import { Hero } from "../components/Hero";
+import { About } from "../components/About";
+import { Contact } from "../components/Contact";
 
 export default function Home() {
   return (
@@ -12,14 +14,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Hero/>
-      
+      <Hero />
 
       <Gallery />
 
-      <footer className="relative h-[90px] flex justify-center items-center z-20">
-        <p>© 2024 - rritammitra59@gmail.com</p>
-      </footer>
+      <About />
+
+      <Contact />
+
+      
     </div>
   );
 }

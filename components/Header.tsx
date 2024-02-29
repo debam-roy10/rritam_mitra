@@ -54,13 +54,13 @@ const Header = () => {
             Portfolio
           </Link>
           <Link
-            href="/about"
+            href="#about"
             className="text-secondary hover:text-primary transition"
           >
             About
           </Link>
           <Link
-            href="/contact"
+            href="#contact"
             className="text-secondary hover:text-primary transition"
           >
             Contact

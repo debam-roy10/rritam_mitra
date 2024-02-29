@@ -37,15 +37,17 @@ const tabs = [
   },
 ];
 
-const images = [p1, p2, p3, p4, p5, p6];
+const allimages = [p1, p2, p3, p4, p5, p6];
+const landscape= [p2, p5, p1, p4, p6, p3];
+const contemporary = [p5, p4, p1, p2, p5, p6];
 
 export function Gallery() {
   const lightboxRef = useRef<LightGallery | null>(null);
 
   return (
     <>
-      <main id="portfolio" className="relative pt-[100px] z-20">
-        <div className="flex flex-col items-center h-full">
+      <main id="portfolio" className="relative mx-auto h-full">
+        <div className="flex flex-col items-center h-full pt-[100px]">
           <Tab.Group>
             <Tab.List className="flex items-center gap-12">
               {tabs.map((tab) => (
@@ -70,7 +72,7 @@ export function Gallery() {
                   className="flex gap-2"
                   columnClassName=""
                 >
-                  {images.map((image, idx) => (
+                  {allimages.map((image, idx) => (
                     <Image
                       key={image.src}
                       src={image}
@@ -92,14 +94,80 @@ export function Gallery() {
                   speed={500}
                   plugins={[lgThumbnail, lgZoom]}
                   dynamic
-                  dynamicEl={images.map((image) => ({
+                  dynamicEl={allimages.map((image) => ({
                     src: image.src,
                     thumb: image.src,
                   }))}
                 />
               </Tab.Panel>
-              <Tab.Panel>landscape</Tab.Panel>
-              <Tab.Panel>contemporary</Tab.Panel>
+              <Tab.Panel>
+                <Masonry
+                  breakpointCols={{ default: 2, 768: 1 }}
+                  className="flex gap-2"
+                  columnClassName=""
+                >
+                  {landscape.map((image, idx) => (
+                    <Image
+                      key={image.src}
+                      src={image}
+                      alt=""
+                      className="mb-2 hover:opacity-70 cursor-pointer"
+                      placeholder="blur"
+                      onClick={() => {
+                        lightboxRef.current?.openGallery(idx);
+                      }}
+                    />
+                  ))}
+                </Masonry>
+                <LightGalleryComponent
+                  onInit={(ref) => {
+                    if (ref) {
+                      lightboxRef.current = ref.instance;
+                    }
+                  }}
+                  speed={500}
+                  plugins={[lgThumbnail, lgZoom]}
+                  dynamic
+                  dynamicEl={landscape.map((image) => ({
+                    src: image.src,
+                    thumb: image.src,
+                  }))}
+                />
+              </Tab.Panel>
+              <Tab.Panel>
+                <Masonry
+                  breakpointCols={{ default: 2, 768: 1 }}
+                  className="flex gap-2"
+                  columnClassName=""
+                >
+                  {contemporary.map((image, idx) => (
+                    <Image
+                      key={image.src}
+                      src={image}
+                      alt=""
+                      className="mb-2 hover:opacity-70 cursor-pointer"
+                      placeholder="blur"
+                      onClick={() => {
+                        lightboxRef.current?.openGallery(idx);
+                      }}
+                    />
+                  ))}
+                </Masonry>
+                <LightGalleryComponent
+                  onInit={(ref) => {
+                    if (ref) {
+                      lightboxRef.current = ref.instance;
+                    }
+                  }}
+                  speed={500}
+                  plugins={[lgThumbnail, lgZoom]}
+                  dynamic
+                  dynamicEl={contemporary.map((image) => ({
+                    src: image.src,
+                    thumb: image.src,
+                  }))}
+                />
+              </Tab.Panel>
             </Tab.Panels>
           </Tab.Group>
         </div>

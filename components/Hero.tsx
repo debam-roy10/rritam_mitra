@@ -15,7 +15,7 @@ export function Hero() {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={transition1}
-        className="section mb-24 lg:mb-[200px]"
+        className=""
         id="home"
       >
         <div className="container mx-auto h-full relative">
@@ -33,24 +33,24 @@ export function Hero() {
               <p className="text-[26px] lg:text-[36px] font-primary mb-4 lg:mb-12">
                 Calcutta, India
               </p>
-              <Link href="#" className="btn mb-[30px]">
+              <Link href="#contact" className="btn mb-[30px]">
                 Get in touch
               </Link>
             </motion.div>
 
-            <div className="flex justify-end max-h-96 lg:max-h-max">
+            <div className="flex justify-end lg:max-h-max">
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 exit={{ scale: 0 }}
                 transition={transition1}
-                className="absolute lg:relative lg:-right-40 overflow-hidden"
+                className="relative lg:-right-40 overflow-hidden"
               >
                 <motion.div
                   whileHover={{ scale: 1.1 }}
                   transition={transition1}
                 >
-                  <Image src={HomeBg} alt="" className="w-[761px]" />
+                  <Image src={HomeBg} alt="" className="w-[761px]" placeholder="blur" />
                 </motion.div>
               </motion.div>
             </div>
