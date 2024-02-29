@@ -54,13 +54,11 @@ export function Contact() {
                 </button>
               </form>
               <footer className="relative h-[90px] flex justify-center items-center z-20">
-        <p>© 2024 - rritammitra59@gmail.com</p>
-      </footer>
+                <p>© 2024 - rritammitra59@gmail.com</p>
+              </footer>
             </div>
           </div>
-          
         </div>
-        
       </motion.section>
     </AnimatePresence>
   );
